@@ -1,10 +1,5 @@
 import { axiosDB } from "../../db/"
 import { Notify } from "notiflix"
-import {
-    updateAuth,
-    updateIsAuthenticated,
-    updateProfile,
-} from "../actions/auth"
 
 const UPDATE_LOGIN_EMAIL = "UPDATE_LOGIN_EMAIL"
 const UPDATE_LOGIN_PASSWORD = "UPDATE_LOGIN_PASSWORD"

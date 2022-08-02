@@ -1,9 +1,5 @@
 import { Notify } from "notiflix"
-import {
-    updateAuth,
-    updateIsAuthenticated,
-    updateProfile,
-} from "../actions/auth"
+import { authActions } from "../actions/"
 import { axiosDB } from "../../db"
 
 const UPDATE_IS_AUTHENTICATED = "UPDATE_IS_AUTHENTICATED"
@@ -103,9 +99,10 @@ const auth = {
             try {
                 await axiosDB.axiosServer.get("/auth/logout")
                 await axiosDB.axiosClient.get("/auth/signout")
-                dispatch(updateAuth(null))
-                dispatch(updateIsAuthenticated(false))
-                dispatch(updateProfile(null))
+                dispatch(authActions.updateAuth(null))
+                dispatch(authActions.updateIsAuthenticated(false))
+                dispatch(authActions.updateProfile(null))
+
                 Notify.success("Logged out", {
                     position: "right-top",
                     timeout: 1000,

@@ -8,6 +8,7 @@ import { useRouter } from "next/router"
 import { axiosServer } from "../../db/axios"
 import Cookies from "js-cookie"
 import { signIn } from "../../redux/reducers/login"
+import { authReducers, loginReducers } from "../../redux/reducers"
 
 const LoginScreen = () => {
     const router = useRouter()
@@ -22,9 +23,9 @@ const LoginScreen = () => {
 
     const handleSignIn = async (event) => {
         event.preventDefault()
-        const signInResponse = await dispatch(signIn())
+        const signInResponse = await dispatch(loginReducers.signIn())
         if (signInResponse.data && signInResponse.data.isAuthenticated) {
-            await dispatch(fetchProfile())
+            await dispatch(authReducers.fetchProfile())
 
             router.push("/")
         }
