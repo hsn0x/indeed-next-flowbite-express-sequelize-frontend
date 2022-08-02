@@ -27,10 +27,17 @@ const HomePage = () => {
         fetchData()
     }, [])
     return (
-        <div className="w-96 mx-auto">
-            <Card>
-                <h2 className="font-bold text-3xl">HomePage</h2>
-            </Card>
+        <div className="grid grid-cols-2">
+            <div>
+                {jobs.rows.map((job) => (
+                    <div key={job.id}>
+                        <Card>
+                            <h2 className="font-bold text-2xl">{job.title}</h2>
+                            <h3 className="text-xl">{job.description}</h3>
+                        </Card>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
