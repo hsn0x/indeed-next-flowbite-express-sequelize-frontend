@@ -9,7 +9,7 @@ I'm a full stack developer...
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hsn0x)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/hsn_0x)
 
-# Template Next FlowBite Authentication FrontEnd
+# Indeed Next Flowbite Express Sequelize FrontEnd
 
 Jobs Listing Backend API
 

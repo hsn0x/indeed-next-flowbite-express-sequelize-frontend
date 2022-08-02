@@ -1,14 +1,13 @@
 {
-    "name": "template-next-flowbit-auth-frontend",
+    "name": "indeed-next-flowbite-express-sequelize-frontend",
     "version": "0.1.0",
-    "description": "template next flowbit auth frontend",
+    "description": "indeed next flowbite express sequelize frontend",
     "private": true,
-    "main": "src/index.js",
     "author": "Hassane Bendaoud <40140987+hsn0x@users.noreply.github.com>",
     "license": "MIT",
     "type": "module",
     "repository": {
-        "url": "https://github.com/hsn0x/template-next-flowbit-auth-frontend.git",
+        "url": "https://github.com/hsn0x/indeed-next-flowbite-express-sequelize-frontend.git",
         "type": "git",
         "directory": "."
     },
