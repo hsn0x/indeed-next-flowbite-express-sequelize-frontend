@@ -15,19 +15,18 @@ const LoginScreen = () => {
 
     const dispatch = useDispatch()
 
-    const { updateLoginEmail, updateLoginPassword } = bindActionCreators(
+    const { updateEmail, updatePassword } = bindActionCreators(
         loginActions,
         dispatch
     )
 
     const handleSignIn = async (event) => {
         event.preventDefault()
-        const signInData = await dispatch(signIn())
-        if (signInData && signInData.isAuthenticated) {
-            const authUser = await dispatch(fetchProfile())
-            authUser
+        const signInResponse = await dispatch(signIn())
+        if (signInResponse.data && signInResponse.data.isAuthenticated) {
+            await dispatch(fetchProfile())
+
             router.push("/")
-        } else {
         }
     }
 
@@ -48,7 +47,7 @@ const LoginScreen = () => {
                             </div>
                             <TextInput
                                 onChange={(event) =>
-                                    updateLoginEmail(event.target.value)
+                                    updateEmail(event.target.value)
                                 }
                                 id="email"
                                 type="text"
@@ -65,7 +64,7 @@ const LoginScreen = () => {
                             </div>
                             <TextInput
                                 onChange={(event) =>
-                                    updateLoginPassword(event.target.value)
+                                    updatePassword(event.target.value)
                                 }
                                 id="password1"
                                 type="password"

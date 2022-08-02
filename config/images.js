@@ -1,4 +1,4 @@
-export const imagesConfig = {
+const images = {
     defaultAvatar: [
         {
             public_id: "default avatars",
@@ -17,4 +17,6 @@ export const imagesConfig = {
             url: "/default-avatar.jpg",
         },
     ],
-};
+}
+
+export default images

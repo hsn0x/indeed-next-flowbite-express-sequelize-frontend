@@ -3,11 +3,12 @@ import { Card, Label, TextInput, Checkbox, Button } from "flowbite-react"
 import { useRouter } from "next/router"
 import { useDispatch, useSelector } from "react-redux"
 import { bindActionCreators } from "redux"
-import { authActions, loginActions, registerActions } from "../../redux/actions"
-import { updateRegisterPasswordConfirmed } from "../../redux/actions/register"
-import { signUp } from "../../redux/reducers/register"
-import { fetchProfile } from "../../redux/reducers/auth"
-import { signIn } from "../../redux/reducers/login"
+import { loginActions, registerActions } from "../../redux/actions"
+import {
+    registerReducers,
+    loginReducers,
+    authReducers,
+} from "../../redux/reducers"
 
 const RegisterScreen = () => {
     const router = useRouter()
@@ -16,36 +17,25 @@ const RegisterScreen = () => {
 
     const dispatch = useDispatch()
 
-    const { updateLoginEmail, updateLoginPassword } = bindActionCreators(
-        loginActions,
-        dispatch
-    )
+    const loginAction = bindActionCreators(loginActions, dispatch)
 
-    const {
-        updateRegisterFirstName,
-        updateRegisterLastName,
-        updateRegisterUsername,
-        updateRegisterEmail,
-        updateRegisterPassword,
-        updateRegisterPasswordConfirmed,
-    } = bindActionCreators(registerActions, dispatch)
+    const registerAction = bindActionCreators(registerActions, dispatch)
 
     const handleSignUp = async (event) => {
         event.preventDefault()
-        await dispatch(signUp())
-        updateLoginEmail(register.email)
-        updateLoginPassword(register.password)
+        await dispatch(registerReducers.signUp())
+        loginAction.updateEmail(register.email)
+        loginAction.updatePassword(register.password)
         handleSignIn(event)
     }
 
     const handleSignIn = async (event) => {
         event.preventDefault()
-        const signInData = await dispatch(signIn())
-        if (signInData && signInData.isAuthenticated) {
-            const authUser = await dispatch(fetchProfile())
-            authUser
+        const signInResponse = await dispatch(loginReducers.signIn())
+        if (signInResponse.data && signInResponse.data.isAuthenticated) {
+            await dispatch(authReducers.fetchProfile())
+
             router.push("/")
-        } else {
         }
     }
     return (
@@ -69,7 +59,7 @@ const RegisterScreen = () => {
                                 </div>
                                 <TextInput
                                     onChange={(event) =>
-                                        updateRegisterFirstName(
+                                        registerAction.updateFirstName(
                                             event.target.value
                                         )
                                     }
@@ -89,7 +79,7 @@ const RegisterScreen = () => {
                                 </div>
                                 <TextInput
                                     onChange={(event) =>
-                                        updateRegisterLastName(
+                                        registerAction.updateLastName(
                                             event.target.value
                                         )
                                     }
@@ -107,7 +97,9 @@ const RegisterScreen = () => {
                             </div>
                             <TextInput
                                 onChange={(event) =>
-                                    updateRegisterUsername(event.target.value)
+                                    registerAction.updateUsername(
+                                        event.target.value
+                                    )
                                 }
                                 id="username"
                                 type="text"
@@ -121,7 +113,9 @@ const RegisterScreen = () => {
                             </div>
                             <TextInput
                                 onChange={(event) =>
-                                    updateRegisterEmail(event.target.value)
+                                    registerAction.updateEmail(
+                                        event.target.value
+                                    )
                                 }
                                 id="email"
                                 type="email"
@@ -135,7 +129,9 @@ const RegisterScreen = () => {
                             </div>
                             <TextInput
                                 onChange={(event) =>
-                                    updateRegisterPassword(event.target.value)
+                                    registerAction.updatePassword(
+                                        event.target.value
+                                    )
                                 }
                                 id="password"
                                 type="password"
@@ -152,7 +148,7 @@ const RegisterScreen = () => {
                             </div>
                             <TextInput
                                 onChange={(event) =>
-                                    updateRegisterPasswordConfirmed(
+                                    registerAction.updatePasswordConfirmed(
                                         event.target.value
                                     )
                                 }

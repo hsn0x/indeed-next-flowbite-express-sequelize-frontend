@@ -1,5 +1,7 @@
-export * as authActions from "./auth"
-export * as userAction from "./users"
+export { default as authActions } from "./auth"
+export { default as userAction } from "./users"
 
-export * as loginActions from "./login"
-export * as registerActions from "./register"
+export { default as loginActions } from "./login"
+export { default as registerActions } from "./register"
+
+export { default as jobsActions } from "./jobs"

@@ -1,41 +1,41 @@
-export const updateIsAuthenticated = (isAuthenticated) => {
-    return (dispatch) =>
-        dispatch({
-            type: "UPDATE_IS_AUTHENTICATED",
-            payload: isAuthenticated,
-        });
-};
+const auth = {
+    updateIsAuthenticated: (isAuthenticated) => {
+        return (dispatch) =>
+            dispatch({
+                type: "UPDATE_IS_AUTHENTICATED",
+                payload: isAuthenticated,
+            })
+    },
+    updateAuth: (payload) => {
+        return (dispatch) =>
+            dispatch({
+                type: "UPDATE_AUTH",
+                payload,
+            })
+    },
+    updateProfile: (payload) => {
+        return (dispatch) =>
+            dispatch({
+                type: "UPDATE_PROFILE",
+                payload,
+            })
+    },
+    updateEmail: (email) => {
+        return (dispatch) => {
+            dispatch({
+                type: "UPDATE_EMAIL",
+                payload: email,
+            })
+        }
+    },
+    updatePassword: (password) => {
+        return (dispatch) => {
+            dispatch({
+                type: "UPDATE_PASSWORD",
+                payload: password,
+            })
+        }
+    },
+}
 
-export const updateAuth = (payload) => {
-    return (dispatch) =>
-        dispatch({
-            type: "UPDATE_AUTH",
-            payload,
-        });
-};
-
-export const updateProfile = (payload) => {
-    return (dispatch) =>
-        dispatch({
-            type: "UPDATE_PROFILE",
-            payload,
-        });
-};
-
-export const updateEmail = (email) => {
-    return (dispatch) => {
-        dispatch({
-            type: "UPDATE_EMAIL",
-            payload: email,
-        });
-    };
-};
-
-export const updatePassword = (password) => {
-    return (dispatch) => {
-        dispatch({
-            type: "UPDATE_PASSWORD",
-            payload: password,
-        });
-    };
-};
+export default auth

@@ -1,7 +1,9 @@
-import Axios from "axios";
-import { axiosClientConfig, axiosServerConfig } from "../config/";
+import Axios from "axios"
+import { axiosConfig } from "../config/"
 
-const axiosClient = Axios.create(axiosClientConfig);
-const axiosServer = Axios.create(axiosServerConfig);
+const axios = {
+    axiosClient: Axios.create(axiosConfig.axiosClientConfig),
+    axiosServer: Axios.create(axiosConfig.axiosServerConfig),
+}
 
-export { axiosClient, axiosServer };
+export default axios

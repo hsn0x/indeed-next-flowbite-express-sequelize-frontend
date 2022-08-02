@@ -1,19 +1,21 @@
-const updateEmail = (email) => {
-    return (dispatch) => {
-        dispatch({
-            type: "UPDATE_EMAIL",
-            payload: email,
-        });
-    };
-};
+const users = {
+    updateEmail: (email) => {
+        return (dispatch) => {
+            dispatch({
+                type: "UPDATE_EMAIL",
+                payload: email,
+            })
+        }
+    },
 
-const updatePassword = (password) => {
-    return (dispatch) => {
-        dispatch({
-            type: "UPDATE_PASSWORD",
-            payload: password,
-        });
-    };
-};
+    updatePassword: (password) => {
+        return (dispatch) => {
+            dispatch({
+                type: "UPDATE_PASSWORD",
+                payload: password,
+            })
+        }
+    },
+}
 
-export { updateEmail, updatePassword };
+export default users

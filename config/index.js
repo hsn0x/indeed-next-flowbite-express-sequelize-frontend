@@ -1,3 +1,1 @@
-import { axiosClientConfig, axiosServerConfig } from "./axios";
-
-export { axiosClientConfig, axiosServerConfig };
+export { default as axiosConfig } from "./axios"
