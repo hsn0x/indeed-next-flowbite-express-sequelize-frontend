@@ -1,0 +1,5 @@
+export { default as HireAboutJob } from "./HireAboutJob"
+export { default as HireBasicInformation } from "./HireBasicInformation"
+export { default as HireCompany } from "./HireCompany"
+export { default as HirePageTitle } from "./HirePageTitle"
+export { default as HireNextBackButton } from "./HireNextBackButton"

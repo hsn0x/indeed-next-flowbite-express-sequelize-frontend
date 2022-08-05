@@ -1,7 +1,9 @@
-import { Card } from "flowbite-react"
+import { Button, Card, Tabs } from "flowbite-react"
+import Link from "next/link"
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { bindActionCreators } from "redux"
+import JobsBox from "../components/jobs/JobsBox"
 import { axiosDB } from "../db"
 import { jobsActions } from "../redux/actions"
 import { errorUtils } from "../utils"
@@ -27,17 +29,25 @@ const HomePage = () => {
         fetchData()
     }, [])
     return (
-        <div className="grid grid-cols-2">
-            <div>
-                {jobs.rows.map((job) => (
-                    <div key={job.id}>
-                        <Card>
-                            <h2 className="font-bold text-2xl">{job.title}</h2>
-                            <h3 className="text-xl">{job.description}</h3>
-                        </Card>
-                    </div>
-                ))}
+        <div>
+            <div className="flex justify-center">
+                <h3 className="text-3xl flex gap-2">
+                    <div>Employers:</div>
+                    <Button href="/hire">Post a job</Button>
+                </h3>
             </div>
+            <Tabs.Group aria-label="Tabs with icons" style="underline">
+                <Tabs.Item title="Job feed">
+                    <div className="grid grid-cols-2">
+                        <div>
+                            <JobsBox jobs={jobs} />
+                        </div>
+                    </div>
+                </Tabs.Item>
+                <Tabs.Item active={true} title="Recent searches">
+                    Dashboard content
+                </Tabs.Item>
+            </Tabs.Group>
         </div>
     )
 }
