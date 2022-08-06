@@ -6,15 +6,14 @@ import {
     HireNextBackButton,
     HirePageTitle,
 } from "../components/Hire"
+import HireStepOne from "../components/Hire/HireStepOne"
+import HireStepTwo from "../components/Hire/HireStepTwo"
 
 const hire = () => {
     return (
         <div className="flex flex-col gap-5">
-            <HirePageTitle />
-            <HireAboutJob />
-            <HireCompany />
-            <HireBasicInformation />
-            <HireNextBackButton />
+            <HireStepOne />
+            <HireStepTwo />
         </div>
     )
 }
