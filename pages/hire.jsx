@@ -1,21 +1,25 @@
 import React from "react"
-import {
-    HireAboutJob,
-    HireBasicInformation,
-    HireCompany,
-    HireNextBackButton,
-    HirePageTitle,
-} from "../components/Hire"
+import { useSelector } from "react-redux"
+import EmployerCreateBox from "../components/Employer/EmployerCreateBox"
+
 import HireStepOne from "../components/Hire/HireStepOne"
 import HireStepTwo from "../components/Hire/HireStepTwo"
 
-const hire = () => {
+const HirePage = () => {
+    const hire = useSelector(({ hire }) => hire)
     return (
         <div className="flex flex-col gap-5">
-            <HireStepOne />
-            <HireStepTwo />
+            {hire.step == 0 ? (
+                <EmployerCreateBox />
+            ) : hire.step === 1 ? (
+                <HireStepOne />
+            ) : hire.step === 2 ? (
+                <HireStepTwo />
+            ) : (
+                ""
+            )}
         </div>
     )
 }
 
-export default hire
+export default HirePage

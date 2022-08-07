@@ -5,3 +5,4 @@ export { default as loginActions } from "./login"
 export { default as registerActions } from "./register"
 
 export { default as jobsActions } from "./jobs"
+export { default as hireActions } from "./hire"
