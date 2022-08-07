@@ -1,6 +1,6 @@
 import { Card } from "flowbite-react"
 import React from "react"
-import { HireNextBackButton } from "../Hire"
+import { HireStepNextBackButton } from "../Hire/HireStep"
 
 const EmployerCreateBox = () => {
     return (
@@ -14,7 +14,7 @@ const EmployerCreateBox = () => {
                     create an employer account
                 </p>
 
-                <HireNextBackButton />
+                <HireStepNextBackButton />
             </Card>
         </div>
     )

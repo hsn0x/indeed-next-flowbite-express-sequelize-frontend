@@ -2,9 +2,9 @@ import { Button, Card } from "flowbite-react"
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { bindActionCreators } from "redux"
-import { hireActions } from "../../redux/actions"
+import { hireActions } from "../../../redux/actions"
 
-const HireNextBackButton = () => {
+const HireStepNextBackButton = () => {
     const hire = useSelector(({ hire }) => hire)
 
     const dispatch = useDispatch()
@@ -39,4 +39,4 @@ const HireNextBackButton = () => {
     )
 }
 
-export default HireNextBackButton
+export default HireStepNextBackButton

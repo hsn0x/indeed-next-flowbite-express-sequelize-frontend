@@ -1,6 +1,6 @@
 import { Card, Select, TextInput } from "flowbite-react"
 import React from "react"
-import { JOB_CONSTANTS } from "../../constants/"
+import { JOB_CONSTANTS } from "../../constants"
 
 const HireBasicInformation = () => {
     return (

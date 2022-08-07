@@ -1,8 +1,8 @@
 import { Card, Label, TextInput } from "flowbite-react"
 import React from "react"
-import { JOB_CONSTANTS } from "../../constants"
+import { JOB_CONSTANTS } from "../../../constants"
 import { FaPlus } from "react-icons/fa"
-import { HireJobChipSchedule } from "./HireJobChip"
+import { HireJobChipSchedule } from "../HireJobChip"
 
 const HireJobSchedule = () => {
     return (

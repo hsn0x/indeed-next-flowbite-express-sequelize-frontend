@@ -1,8 +1,8 @@
 import { Card } from "flowbite-react"
 import React from "react"
-import { JOB_CONSTANTS } from "../../constants"
 import { FaPlus } from "react-icons/fa"
-import { HireJobChipType } from "./HireJobChip/"
+import { JOB_CONSTANTS } from "../../../constants"
+import { HireJobChipType } from "../HireJobChip"
 
 const HireJobType = () => {
     return (

@@ -1,13 +1,8 @@
 import React from "react"
-import {
-    HireStepTitle,
-    HireNextBackButton,
-    HireJobType,
-    HireJobSchedule,
-    HireJobHiringQuestins,
-} from "./"
+import { HireJobHiringQuestins, HireJobSchedule, HireJobType } from "../HireJob"
+import { HireStepTitle, HireStepNextBackButton } from "./"
 
-const HireStepTwo = () => {
+const HireStep2 = () => {
     return (
         <div className="grid grid-cols-2">
             <div className="flex flex-col gap-5">
@@ -15,10 +10,10 @@ const HireStepTwo = () => {
                 <HireJobType />
                 <HireJobSchedule />
                 <HireJobHiringQuestins />
-                <HireNextBackButton />
+                <HireStepNextBackButton />
             </div>
         </div>
     )
 }
 
-export default HireStepTwo
+export default HireStep2
