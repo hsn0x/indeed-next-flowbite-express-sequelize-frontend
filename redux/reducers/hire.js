@@ -1,11 +1,15 @@
 const UPDATE_HIRE_STEP = "UPDATE_HIRE_STEP"
 const UPDATE_HIRE_JOB_TYPE = "UPDATE_HIRE_JOB_TYPE"
 const UPDATE_HIRE_JOB_SCHEDULE = "UPDATE_HIRE_JOB_SCHEDULE"
+const UPDATE_HIRE_JOB_SUPPLEMENTAL_PAY = "UPDATE_HIRE_JOB_SUPPLEMENTAL_PAY"
+const UPDATE_HIRE_JOB_BENEFITS = "UPDATE_HIRE_JOB_BENEFITS"
 
 const initialState = {
     step: 0,
     jobType: [],
     jobSchedule: [],
+    jobSupplemental: [],
+    jobBenefit: [],
 }
 
 const hire = {
@@ -27,7 +31,22 @@ const hire = {
                       )
                     : [...state.jobSchedule, action.jobSchedule]
                 return { ...state, jobSchedule: jobSchedule }
-
+            case UPDATE_HIRE_JOB_SUPPLEMENTAL_PAY:
+                const jobSupplemental = state.jobSupplemental.includes(
+                    action.jobSupplemental
+                )
+                    ? state.jobSupplemental.filter(
+                          (pay) => pay !== action.jobSupplemental
+                      )
+                    : [...state.jobSupplemental, action.jobSupplemental]
+                return { ...state, jobSupplemental: jobSupplemental }
+            case UPDATE_HIRE_JOB_BENEFITS:
+                const jobBenefit = state.jobBenefit.includes(action.jobBenefit)
+                    ? state.jobBenefit.filter(
+                          (benefit) => benefit !== action.jobBenefit
+                      )
+                    : [...state.jobBenefit, action.jobBenefit]
+                return { ...state, jobBenefit: jobBenefit }
             default:
                 return state
         }

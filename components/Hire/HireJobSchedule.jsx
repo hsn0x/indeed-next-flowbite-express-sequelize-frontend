@@ -2,9 +2,9 @@ import { Card, Label, TextInput } from "flowbite-react"
 import React from "react"
 import { JOB_CONSTANTS } from "../../constants"
 import { FaPlus } from "react-icons/fa"
-import { HireJobScheduleChip } from "./"
+import { HireJobChipSchedule } from "./HireJobChip"
 
-const HireJobType = () => {
+const HireJobSchedule = () => {
     return (
         <Card>
             <h2 className="text-xl font-bold">
@@ -14,7 +14,7 @@ const HireJobType = () => {
             <div className="flex gap-2 flex-wrap">
                 {JOB_CONSTANTS.schedule.map((schedule) => (
                     <div key={schedule.id}>
-                        <HireJobScheduleChip schedule={schedule} />
+                        <HireJobChipSchedule schedule={schedule} />
                     </div>
                 ))}
             </div>
@@ -62,4 +62,4 @@ const HireJobType = () => {
     )
 }
 
-export default HireJobType
+export default HireJobSchedule

@@ -2,19 +2,20 @@ import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { FaPlus, FaCheck } from "react-icons/fa"
 import { bindActionCreators } from "redux"
-import { hireActions } from "../../redux/actions"
+import { hireActions } from "../../../redux/actions"
 
-const HireJobTypeChip = ({ type }) => {
+const HireJobScheduleChip = ({ schedule }) => {
     const hire = useSelector(({ hire }) => hire)
     const dispatch = useDispatch()
     const hireAction = bindActionCreators(hireActions, dispatch)
 
     const handleSelected = () => {
-        hireAction.updateJobType(type)
+        hireAction.updateJobSchedule(schedule)
     }
+
     return (
         <div>
-            {!hire.jobType.includes(type) ? (
+            {!hire.jobSchedule.includes(schedule) ? (
                 <div
                     onClick={handleSelected}
                     className="border-2 bg-transparent hover:bg-blue-50 border-gray-500 hover:border-blue-500 cursor-pointer rounded-lg py-1 px-4 text-sm flex gap-1 h-9 items-center"
@@ -22,7 +23,7 @@ const HireJobTypeChip = ({ type }) => {
                     <div className="">
                         <FaPlus />
                     </div>
-                    <div>{type.name}</div>
+                    <div>{schedule.name}</div>
                 </div>
             ) : (
                 <div
@@ -32,11 +33,11 @@ const HireJobTypeChip = ({ type }) => {
                     <div className="">
                         <FaCheck color="white" />
                     </div>
-                    <div>{type.name}</div>
+                    <div>{schedule.name}</div>
                 </div>
             )}
         </div>
     )
 }
 
-export default HireJobTypeChip
+export default HireJobScheduleChip

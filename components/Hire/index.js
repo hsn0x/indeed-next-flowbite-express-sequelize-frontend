@@ -6,8 +6,14 @@ export { default as HireNextBackButton } from "./HireNextBackButton"
 export { default as HireStepTitle } from "./HireStepTitle"
 
 export { default as HireJobSchedule } from "./HireJobSchedule"
-export { default as HireJobScheduleChip } from "./HireJobScheduleChip"
 export { default as HireJobHiringQuestins } from "./HireJobHiringQuestins"
 
 export { default as HireJobType } from "./HireJobType"
-export { default as HireJobTypeChip } from "./HireJobTypeChip"
+
+export { default as HireStepOne } from "./HireStepOne"
+export { default as HireStepTwo } from "./HireStepTwo"
+export { default as HireStepThree } from "./HireStepThree"
+
+export { default as HireBenefit } from "./HireBenefit"
+export { default as HireRangeSalary } from "./HireRangeSalary"
+export { default as HireSupplemental } from "./HireSupplemental"

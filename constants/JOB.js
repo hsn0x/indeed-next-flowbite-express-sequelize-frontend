@@ -1,5 +1,18 @@
 import { v4 as uuid } from "uuid"
 const JOB = {
+    payRate: [
+        { id: uuid(), name: "Range" },
+        { id: uuid(), name: "Starting amount" },
+        { id: uuid(), name: "Maximum amount" },
+        { id: uuid(), name: "Exact amount" },
+    ],
+    rate: [
+        { id: uuid(), name: "per hour" },
+        { id: uuid(), name: "per day" },
+        { id: uuid(), name: "per week" },
+        { id: uuid(), name: "per month" },
+        { id: uuid(), name: "per year" },
+    ],
     location: [
         { id: uuid(), name: "In person" },
         { id: uuid(), name: "Remote" },

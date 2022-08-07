@@ -2,7 +2,7 @@ import { Card } from "flowbite-react"
 import React from "react"
 import { JOB_CONSTANTS } from "../../constants"
 import { FaPlus } from "react-icons/fa"
-import { HireJobTypeChip } from "./"
+import { HireJobChipType } from "./HireJobChip/"
 
 const HireJobType = () => {
     return (
@@ -12,7 +12,7 @@ const HireJobType = () => {
             <div className="flex gap-2 flex-wrap">
                 {JOB_CONSTANTS.type.map((type) => (
                     <div key={type.id}>
-                        <HireJobTypeChip type={type} />
+                        <HireJobChipType type={type} />
                     </div>
                 ))}
             </div>
