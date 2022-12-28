@@ -1,5 +1,5 @@
 import React from "react"
-import { HireRangeSalary, HireSupplemental, HireBenefit } from "../"
+import { HireJobRangeSalary, HireJobSupplemental, HireJobBenefit } from "../"
 import { HireStepTitle, HireStepNextBackButton } from "./"
 
 const HireStep3 = () => {
@@ -7,9 +7,9 @@ const HireStep3 = () => {
         <div className="grid grid-cols-2">
             <div className="flex flex-col gap-5">
                 <HireStepTitle title={"Add compensation"} />
-                <HireRangeSalary />
-                <HireSupplemental />
-                <HireBenefit />
+                <HireJobRangeSalary />
+                <HireJobSupplemental />
+                <HireJobBenefit />
                 <HireStepNextBackButton />
             </div>
         </div>

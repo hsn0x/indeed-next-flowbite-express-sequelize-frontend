@@ -2,7 +2,12 @@ import React from "react"
 import { useSelector } from "react-redux"
 import EmployerCreateBox from "../components/Employer/EmployerCreateBox"
 
-import { HireStep1, HireStep2, HireStep3 } from "../components/Hire/HireStep"
+import {
+    HireStep1,
+    HireStep2,
+    HireStep3,
+    HireStep4,
+} from "../components/Hire/HireStep"
 
 const HirePage = () => {
     const hire = useSelector(({ hire }) => hire)
@@ -16,6 +21,8 @@ const HirePage = () => {
                 <HireStep2 />
             ) : hire.step === 3 ? (
                 <HireStep3 />
+            ) : hire.step === 4 ? (
+                <HireStep4 />
             ) : (
                 ""
             )}

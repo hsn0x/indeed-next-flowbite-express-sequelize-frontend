@@ -1,10 +1,10 @@
 import { Card } from "flowbite-react"
 import React from "react"
-import { JOB_CONSTANTS } from "../../constants"
+import { JOB_CONSTANTS } from "../../../constants"
 import { FaPlus } from "react-icons/fa"
-import { HireJobChipBenefit } from "./HireJobChip"
+import { HireJobChipBenefit } from "../HireJobChip"
 
-const HireBenefit = () => {
+const HireJobBenefit = () => {
     return (
         <Card>
             <h2 className="text-xl font-bold">
@@ -22,4 +22,4 @@ const HireBenefit = () => {
     )
 }
 
-export default HireBenefit
+export default HireJobBenefit

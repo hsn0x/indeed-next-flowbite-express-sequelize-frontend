@@ -1,8 +1,8 @@
 import { Card, Label, Select, TextInput } from "flowbite-react"
 import React from "react"
-import { JOB_CONSTANTS } from "../../constants"
+import { JOB_CONSTANTS } from "../../../constants"
 
-const HireRangeSalary = () => {
+const HireJobRangeSalary = () => {
     return (
         <Card>
             <h2 className="font-bold">What is the pay rate or range?</h2>
@@ -102,4 +102,4 @@ const HireRangeSalary = () => {
     )
 }
 
-export default HireRangeSalary
+export default HireJobRangeSalary

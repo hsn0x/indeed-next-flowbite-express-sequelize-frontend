@@ -1,8 +1,8 @@
 import { Card, Select, TextInput } from "flowbite-react"
 import React from "react"
-import { JOB_CONSTANTS } from "../../constants"
+import { JOB_CONSTANTS } from "../../../constants"
 
-const HireBasicInformation = () => {
+const HireJobBasicInformation = () => {
     return (
         <div className="flex flex-col gap-5">
             <Card>
@@ -26,4 +26,4 @@ const HireBasicInformation = () => {
     )
 }
 
-export default HireBasicInformation
+export default HireJobBasicInformation

@@ -1,7 +1,7 @@
 import { Card } from "flowbite-react"
 import React from "react"
 
-const HireAboutJob = () => {
+const HireJobAbout = () => {
     return (
         <div>
             {" "}
@@ -16,4 +16,4 @@ const HireAboutJob = () => {
     )
 }
 
-export default HireAboutJob
+export default HireJobAbout
